@@ -75,6 +75,8 @@ for t = 1:Max_iterations
         end
     end
 
+    dim_div = std(X, 0, 1) ./ (range_val + 1e-30);
+
     for i = 1:N
         cands = setdiff(1:N, i);
         sel = cands(randperm(length(cands), 3));
